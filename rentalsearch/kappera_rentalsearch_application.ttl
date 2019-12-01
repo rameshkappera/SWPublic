@@ -4,11 +4,12 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix home: <http://www.rentalsearch.com/ontologies/rentalsearch.owl#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.rentalsearch.com/ontologies/rentalsearch.owl> .
 
 <http://www.rentalsearch.com/ontologies/rentalsearch.owl> rdf:type owl:Ontology ;
-                                                              rdfs:comment """Ramesh Kappera, CS407 - Class Project - Rental Search
+                                                           rdfs:comment """Ramesh Kappera, CS407 - Class Project - Rental Search
 
 My application is structure like Airbnb, where those using the application can search for particular houses in certain areas and choose where they'd like to stay.  Queries may include:
 
@@ -23,129 +24,309 @@ Search for houses that have atleast two TVs.
 Search for houese with atleast two queen sized beds.""" .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#avgPerNightCost
+home:avgPerNightCost rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasAddress
+home:hasAddress rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasBrand
+home:hasBrand rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasColor
+home:hasColor rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasFloors
+home:hasFloors rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasFurniture
+home:hasFurniture rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasHouse
+home:hasHouse rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasMaxCapacity
+home:hasMaxCapacity rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasPaintColor
+home:hasPaintColor rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasScreenSize
+home:hasScreenSize rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasSqft
+home:hasSqft rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasTechnology
+home:hasTechnology rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#hasZipcode
+home:hasZipcode rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#isApplianceOf
+home:isApplianceOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#isFixtureOf
+home:isFixtureOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#isFurnitureOf
+home:isFurnitureOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#isRoomOf
+home:isRoomOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#isTechnologyOf
+home:isTechnologyOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#sleepsUpTo
+home:sleepsUpTo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#BeachHouse
+home:BeachHouse rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CapeHouse
+home:CapeHouse rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#ColonialHouse
+home:ColonialHouse rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CottageHouse
+home:CottageHouse rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Couch
+home:Couch rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBathRoom
+home:FullBathRoom rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullSizeBed
+home:FullSizeBed rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#GuestBedRoom
+home:GuestBedRoom rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#House
+home:House rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#KingSizeBed
+home:KingSizeBed rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Kitchen
+home:Kitchen rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#LivingRoom
+home:LivingRoom rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#MasterBedRoom
+home:MasterBedRoom rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Property
+home:Property rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#QueenSizeBed
+home:QueenSizeBed rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#RanchHouse
+home:RanchHouse rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Refrigerator
+home:Refrigerator rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#SmartSpeaker
+home:SmartSpeaker rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Stove
+home:Stove rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Table
+home:Table rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Television
+home:Television rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#Toilet
+home:Toilet rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinSizeBed
+home:TwinSizeBed rdf:type owl:Class .
+
+
+###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#VictorianHouse
+home:VictorianHouse rdf:type owl:Class .
+
+
+#################################################################
 #    Individuals
 #################################################################
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoA
 home:AmazonEchoA rdf:type owl:NamedIndividual ,
                           home:SmartSpeaker ;
-                 home:isTechnologyOf home:HouseAKitchen ;
                  home:hasBrand "Amazon" ;
-                 home:hasColor "White" .
+                 home:hasColor "White" ;
+                 home:isTechnologyOf home:HouseAKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoB
 home:AmazonEchoB rdf:type owl:NamedIndividual ,
                           home:SmartSpeaker ;
-                 home:isTechnologyOf home:HouseBKitchen ;
                  home:hasBrand "Amazon" ;
-                 home:hasColor "Black" .
+                 home:hasColor "Black" ;
+                 home:isTechnologyOf home:HouseBKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoE
 home:AmazonEchoE rdf:type owl:NamedIndividual ,
                           home:SmartSpeaker ;
-                 home:isTechnologyOf home:HouseEKitchen ;
                  home:hasBrand "Amazon" ;
-                 home:hasColor "Grey" .
+                 home:hasColor "Grey" ;
+                 home:isTechnologyOf home:HouseEKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoF
 home:AmazonEchoF rdf:type owl:NamedIndividual ,
                           home:SmartSpeaker ;
-                 home:isTechnologyOf home:HouseFKitchen ;
                  home:hasBrand "Amazon" ;
-                 home:hasColor "Black" .
+                 home:hasColor "Black" ;
+                 home:isTechnologyOf home:HouseFKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoPlusC
 home:AmazonEchoPlusC rdf:type owl:NamedIndividual ,
                               home:SmartSpeaker ;
-                     home:isTechnologyOf home:HouseCKitchen ;
                      home:hasBrand "Amazon" ;
-                     home:hasColor "Black" .
+                     home:hasColor "Black" ;
+                     home:isTechnologyOf home:HouseCKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#AmazonEchoPlusG
 home:AmazonEchoPlusG rdf:type owl:NamedIndividual ,
                               home:SmartSpeaker ;
-                     home:isTechnologyOf home:HouseGKitchen ;
                      home:hasBrand "Amazon" ;
-                     home:hasColor "White" .
+                     home:hasColor "White" ;
+                     home:isTechnologyOf home:HouseGKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CouchA
 home:CouchA rdf:type owl:NamedIndividual ,
                      home:Couch ;
-            home:isFurnitureOf home:HouseALivingroom ;
             home:hasBrand "Ikea" ;
-            home:hasColor "Blue" .
+            home:hasColor "Blue" ;
+            home:isFurnitureOf home:HouseALivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CouchB
 home:CouchB rdf:type owl:NamedIndividual ,
                      home:Couch ;
-            home:isFurnitureOf home:HouseBLivingroom ;
             home:hasBrand "EthanAllan" ;
-            home:hasColor "Grey" .
+            home:hasColor "Grey" ;
+            home:isFurnitureOf home:HouseBLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CouchC
 home:CouchC rdf:type owl:NamedIndividual ,
                      home:Couch ;
-            home:isFurnitureOf home:HouseCLivingroom ;
             home:hasBrand "AshleyFurniture" ;
-            home:hasColor "Beige" .
+            home:hasColor "Beige" ;
+            home:isFurnitureOf home:HouseCLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#CouchD
 home:CouchD rdf:type owl:NamedIndividual ,
                      home:Couch ;
-            home:isFurnitureOf home:HouseDLivingroom ;
             home:hasBrand "AshleyFurniture" ;
-            home:hasColor "Beige" .
+            home:hasColor "Beige" ;
+            home:isFurnitureOf home:HouseDLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedA1
 home:FullBedA1 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseAGuestRoom2 ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAGuestRoom2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedA2
 home:FullBedA2 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseAGuestRoom2 ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAGuestRoom2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedB1
 home:FullBedB1 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseBGuestRoom2 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseBGuestRoom2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedB2
 home:FullBedB2 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseBGuestRoom2 ;
-               home:hasBrand "HomeLSleepysife" .
+               home:hasBrand "HomeLSleepysife" ;
+               home:isFurnitureOf home:HouseBGuestRoom2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedC1
 home:FullBedC1 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseCGuestRoom2 ;
-               home:hasBrand "Serta" .
+               home:hasBrand "Serta" ;
+               home:isFurnitureOf home:HouseCGuestRoom2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#FullBedD1
 home:FullBedD1 rdf:type owl:NamedIndividual ,
                         home:FullSizeBed ;
-               home:isFurnitureOf home:HouseDGuestRoom1 ;
-               home:hasBrand "Serta" .
+               home:hasBrand "Serta" ;
+               home:isFurnitureOf home:HouseDGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseA
@@ -160,51 +341,51 @@ home:HouseA rdf:type owl:NamedIndividual ,
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseABathroom
 home:HouseABathroom rdf:type owl:NamedIndividual ,
                              home:FullBathRoom ;
-                    home:isRoomOf home:HouseA ;
                     home:hasPaintColor "Peach" ;
-                    home:hasSqft 25 .
+                    home:hasSqft 25 ;
+                    home:isRoomOf home:HouseA .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseAGuestRoom1
 home:HouseAGuestRoom1 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseA ;
                       home:hasPaintColor "Soft Brown" ;
                       home:hasSqft 70 ;
+                      home:isRoomOf home:HouseA ;
                       home:sleepsUpTo 3 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseAGuestRoom2
 home:HouseAGuestRoom2 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseA ;
                       home:hasPaintColor "LightPink" ;
                       home:hasSqft 75 ;
+                      home:isRoomOf home:HouseA ;
                       home:sleepsUpTo 4 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseAKitchen
 home:HouseAKitchen rdf:type owl:NamedIndividual ,
                             home:Kitchen ;
-                   home:isRoomOf home:HouseA ;
-                   home:hasSqft 250 .
+                   home:hasSqft 250 ;
+                   home:isRoomOf home:HouseA .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseALivingroom
 home:HouseALivingroom rdf:type owl:NamedIndividual ,
                                home:LivingRoom ;
-                      home:hasTechnology home:AmazonEchoA ;
-                      home:isRoomOf home:HouseA ;
                       home:hasPaintColor "SleetBlue" ;
-                      home:hasSqft 150 .
+                      home:hasSqft 150 ;
+                      home:hasTechnology home:AmazonEchoA ;
+                      home:isRoomOf home:HouseA .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseAMasterBedroom
 home:HouseAMasterBedroom rdf:type owl:NamedIndividual ,
                                   home:MasterBedRoom ;
-                         home:isRoomOf home:HouseA ;
                          home:hasPaintColor "LightBlue" ;
                          home:hasSqft 100 ;
+                         home:isRoomOf home:HouseA ;
                          home:sleepsUpTo 3 .
 
 
@@ -220,51 +401,51 @@ home:HouseB rdf:type owl:NamedIndividual ,
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBBathroom
 home:HouseBBathroom rdf:type owl:NamedIndividual ,
                              home:FullBathRoom ;
-                    home:isRoomOf home:HouseB ;
                     home:hasPaintColor "White" ;
-                    home:hasSqft 35 .
+                    home:hasSqft 35 ;
+                    home:isRoomOf home:HouseB .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBGuestRoom1
 home:HouseBGuestRoom1 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseB ;
                       home:hasPaintColor "Yellow" ;
                       home:hasSqft 82 ;
+                      home:isRoomOf home:HouseB ;
                       home:sleepsUpTo 4 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBGuestRoom2
 home:HouseBGuestRoom2 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseB ;
                       home:hasPaintColor "LightBlue" ;
                       home:hasSqft 105 ;
+                      home:isRoomOf home:HouseB ;
                       home:sleepsUpTo 4 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBKitchen
 home:HouseBKitchen rdf:type owl:NamedIndividual ,
                             home:Kitchen ;
-                   home:isRoomOf home:HouseB ;
-                   home:hasSqft 270 .
+                   home:hasSqft 270 ;
+                   home:isRoomOf home:HouseB .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBLivingroom
 home:HouseBLivingroom rdf:type owl:NamedIndividual ,
                                home:LivingRoom ;
-                      home:hasTechnology home:AmazonEchoB ;
-                      home:isRoomOf home:HouseB ;
                       home:hasPaintColor "Olive" ;
-                      home:hasSqft 195 .
+                      home:hasSqft 195 ;
+                      home:hasTechnology home:AmazonEchoB ;
+                      home:isRoomOf home:HouseB .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseBMasterBedroom
 home:HouseBMasterBedroom rdf:type owl:NamedIndividual ,
                                   home:MasterBedRoom ;
-                         home:isRoomOf home:HouseB ;
                          home:hasPaintColor "Lilac" ;
                          home:hasSqft 120 ;
+                         home:isRoomOf home:HouseB ;
                          home:sleepsUpTo 3 .
 
 
@@ -280,52 +461,52 @@ home:HouseC rdf:type owl:NamedIndividual ,
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCBathroom
 home:HouseCBathroom rdf:type owl:NamedIndividual ,
                              home:FullBathRoom ;
-                    home:isRoomOf home:HouseC ;
                     home:hasPaintColor "White" ;
-                    home:hasSqft 40 .
+                    home:hasSqft 40 ;
+                    home:isRoomOf home:HouseC .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCGuestRoom1
 home:HouseCGuestRoom1 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseC ;
                       home:hasPaintColor "Blue" ;
                       home:hasSqft 90 ;
+                      home:isRoomOf home:HouseC ;
                       home:sleepsUpTo 4 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCGuestRoom2
 home:HouseCGuestRoom2 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseC ;
                       home:hasPaintColor "SkyBlue" ;
                       home:hasSqft 105 ;
+                      home:isRoomOf home:HouseC ;
                       home:sleepsUpTo 2 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCKitchen
 home:HouseCKitchen rdf:type owl:NamedIndividual ,
                             home:Kitchen ;
-                   home:isRoomOf home:HouseC ;
-                   home:hasSqft 200 .
+                   home:hasSqft 200 ;
+                   home:isRoomOf home:HouseC .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCLivingroom
 home:HouseCLivingroom rdf:type owl:NamedIndividual ,
                                home:LivingRoom ;
-                      home:hasTechnology home:AmazonEchoPlusC ;
-                      home:isRoomOf home:HouseC ;
                       home:hasPaintColor "Olive" ;
-                      home:hasSqft 175 .
+                      home:hasSqft 175 ;
+                      home:hasTechnology home:AmazonEchoPlusC ;
+                      home:isRoomOf home:HouseC .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseCMasterBedroom
 home:HouseCMasterBedroom rdf:type owl:NamedIndividual ,
                                   home:MasterBedRoom ;
                          home:hasFurniture home:QueenBedC1 ;
-                         home:isRoomOf home:HouseC ;
                          home:hasPaintColor "Brown" ;
                          home:hasSqft 100 ;
+                         home:isRoomOf home:HouseC ;
                          home:sleepsUpTo 2 .
 
 
@@ -341,41 +522,41 @@ home:HouseD rdf:type owl:NamedIndividual ,
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseDBathroom
 home:HouseDBathroom rdf:type owl:NamedIndividual ,
                              home:FullBathRoom ;
-                    home:isRoomOf home:HouseD ;
                     home:hasPaintColor "White" ;
-                    home:hasSqft 35 .
+                    home:hasSqft 35 ;
+                    home:isRoomOf home:HouseD .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseDGuestRoom1
 home:HouseDGuestRoom1 rdf:type owl:NamedIndividual ,
                                home:GuestBedRoom ;
-                      home:isRoomOf home:HouseD ;
                       home:hasPaintColor "EggShellWhite" ;
                       home:hasSqft 80 ;
+                      home:isRoomOf home:HouseD ;
                       home:sleepsUpTo 3 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseDKitchen
 home:HouseDKitchen rdf:type owl:NamedIndividual ,
                             home:Kitchen ;
-                   home:isRoomOf home:HouseD ;
-                   home:hasSqft 150 .
+                   home:hasSqft 150 ;
+                   home:isRoomOf home:HouseD .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseDLivingroom
 home:HouseDLivingroom rdf:type owl:NamedIndividual ,
                                home:LivingRoom ;
-                      home:isRoomOf home:HouseD ;
                       home:hasPaintColor "Olive" ;
-                      home:hasSqft 125 .
+                      home:hasSqft 125 ;
+                      home:isRoomOf home:HouseD .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#HouseDMasterBedroom
 home:HouseDMasterBedroom rdf:type owl:NamedIndividual ,
                                   home:MasterBedRoom ;
-                         home:isRoomOf home:HouseD ;
                          home:hasPaintColor "White" ;
                          home:hasSqft 75 ;
+                         home:isRoomOf home:HouseD ;
                          home:sleepsUpTo 2 .
 
 
@@ -487,379 +668,379 @@ home:HouseK rdf:type owl:NamedIndividual ,
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#KingBedA1
 home:KingBedA1 rdf:type owl:NamedIndividual ,
                         home:KingSizeBed ;
-               home:isFurnitureOf home:HouseAMasterBedroom ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#KingBedB1
 home:KingBedB1 rdf:type owl:NamedIndividual ,
                         home:KingSizeBed ;
-               home:isFurnitureOf home:HouseBMasterBedroom ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseBMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyA
 home:PropertyA rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseA ;
                home:hasAddress "1234 Main Street Westerly RI" ;
+               home:hasHouse home:HouseA ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyB
 home:PropertyB rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseB ;
                home:hasAddress "41 Center Street Westerly RI" ;
+               home:hasHouse home:HouseB ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyC
 home:PropertyC rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseC ;
                home:hasAddress "99 River Run, Westerly RI" ;
+               home:hasHouse home:HouseC ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyD
 home:PropertyD rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseD ;
                home:hasAddress "99 GooseRidge Lane, Westerly RI" ;
+               home:hasHouse home:HouseD ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyE
 home:PropertyE rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseE ;
                home:hasAddress "1 Beach Drive, Westerly RI" ;
+               home:hasHouse home:HouseE ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyF
 home:PropertyF rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseF ;
                home:hasAddress "25 Main Street, Westerly RI" ;
+               home:hasHouse home:HouseF ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyG
 home:PropertyG rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseG ;
                home:hasAddress "22 Waterfront Rd, Westerly RI" ;
+               home:hasHouse home:HouseG ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyH
 home:PropertyH rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseH ;
                home:hasAddress "432 Broad Street, Westerly RI" ;
+               home:hasHouse home:HouseH ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyI
 home:PropertyI rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseI ;
                home:hasAddress "241 Parker Street, North Stonington CT" ;
+               home:hasHouse home:HouseI ;
                home:hasZipcode 06359 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyJ
 home:PropertyJ rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseJ ;
                home:hasAddress "23 Chester Road, Westerly RI" ;
+               home:hasHouse home:HouseJ ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#PropertyK
 home:PropertyK rdf:type owl:NamedIndividual ,
                         home:Property ;
-               home:hasHouse home:HouseK ;
                home:hasAddress "14 Bush Hill Lane, Westerly RI" ;
+               home:hasHouse home:HouseK ;
                home:hasZipcode 02891 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#QueenBedC1
 home:QueenBedC1 rdf:type owl:NamedIndividual ,
                          home:QueenSizeBed ;
-                home:isFurnitureOf home:HouseCMasterBedroom ;
-                home:hasBrand "SimmonsBeautyrest" .
+                home:hasBrand "SimmonsBeautyrest" ;
+                home:isFurnitureOf home:HouseCMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#QueenBedD1
 home:QueenBedD1 rdf:type owl:NamedIndividual ,
                          home:QueenSizeBed ;
-                home:isFurnitureOf home:HouseDMasterBedroom ;
-                home:hasBrand "SimmonsBeautyrest" .
+                home:hasBrand "SimmonsBeautyrest" ;
+                home:isFurnitureOf home:HouseDMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#RefrigeratorA
 home:RefrigeratorA rdf:type owl:NamedIndividual ,
                             home:Refrigerator ;
-                   home:isApplianceOf home:HouseAKitchen ;
                    home:hasBrand "Kenmore" ;
-                   home:hasColor "White" .
+                   home:hasColor "White" ;
+                   home:isApplianceOf home:HouseAKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#RefrigeratorB
 home:RefrigeratorB rdf:type owl:NamedIndividual ,
                             home:Refrigerator ;
-                   home:isApplianceOf home:HouseBKitchen ;
                    home:hasBrand "Whirlpool" ;
-                   home:hasColor "StainlessSteel" .
+                   home:hasColor "StainlessSteel" ;
+                   home:isApplianceOf home:HouseBKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#RefrigeratorC
 home:RefrigeratorC rdf:type owl:NamedIndividual ,
                             home:Refrigerator ;
-                   home:isApplianceOf home:HouseCKitchen ;
                    home:hasBrand "Kenmore" ;
-                   home:hasColor "StainlessSteel" .
+                   home:hasColor "StainlessSteel" ;
+                   home:isApplianceOf home:HouseCKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#RefrigeratorD
 home:RefrigeratorD rdf:type owl:NamedIndividual ,
                             home:Refrigerator ;
-                   home:isApplianceOf home:HouseDKitchen ;
                    home:hasBrand "Kenmore" ;
-                   home:hasColor "White" .
+                   home:hasColor "White" ;
+                   home:isApplianceOf home:HouseDKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#StoveA
 home:StoveA rdf:type owl:NamedIndividual ,
                      home:Stove ;
-            home:isApplianceOf home:HouseAKitchen ;
             home:hasBrand "Samsung" ;
-            home:hasColor "StainlessSteele" .
+            home:hasColor "StainlessSteele" ;
+            home:isApplianceOf home:HouseAKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#StoveB
 home:StoveB rdf:type owl:NamedIndividual ,
                      home:Stove ;
-            home:isApplianceOf home:HouseBKitchen ;
             home:hasBrand "Kenmore" ;
-            home:hasColor "StainelessSteel" .
+            home:hasColor "StainelessSteel" ;
+            home:isApplianceOf home:HouseBKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#StoveC
 home:StoveC rdf:type owl:NamedIndividual ,
                      home:Stove ;
-            home:isApplianceOf home:HouseCKitchen ;
             home:hasBrand "Whirlpool" ;
-            home:hasColor "Black" .
+            home:hasColor "Black" ;
+            home:isApplianceOf home:HouseCKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#StoveD
 home:StoveD rdf:type owl:NamedIndividual ,
                      home:Stove ;
-            home:isApplianceOf home:HouseDKitchen ;
             home:hasBrand "Kenmore" ;
-            home:hasColor "White" .
+            home:hasColor "White" ;
+            home:isApplianceOf home:HouseDKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVA1
 home:TVA1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseALivingroom ;
           home:hasBrand "Samsung" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 55 .
+          home:hasScreenSize 55 ;
+          home:isTechnologyOf home:HouseALivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVB1
 home:TVB1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseBLivingroom ;
           home:hasBrand "Sony" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 62 .
+          home:hasScreenSize 62 ;
+          home:isTechnologyOf home:HouseBLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVB2
 home:TVB2 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseBMasterBedroom ;
           home:hasBrand "Sony" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 35 .
+          home:hasScreenSize 35 ;
+          home:isTechnologyOf home:HouseBMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVC1
 home:TVC1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseCLivingroom ;
           home:hasBrand "LG" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 45 .
+          home:hasScreenSize 45 ;
+          home:isTechnologyOf home:HouseCLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVD1
 home:TVD1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseDLivingroom ;
           home:hasBrand "LG" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 32 .
+          home:hasScreenSize 32 ;
+          home:isTechnologyOf home:HouseDLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVE1
 home:TVE1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseELivingroom ,
-                              home:HouseEMasterBedroom ;
           home:hasBrand "LG" ,
                         "Sony" ;
           home:hasColor "Black" ;
           home:hasScreenSize 32 ,
-                             55 .
+                             55 ;
+          home:isTechnologyOf home:HouseELivingroom ,
+                              home:HouseEMasterBedroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVF1
 home:TVF1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseFLivingRoom ;
           home:hasBrand "Samsung" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 58 .
+          home:hasScreenSize 58 ;
+          home:isTechnologyOf home:HouseFLivingRoom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TVG1
 home:TVG1 rdf:type owl:NamedIndividual ,
                    home:Television ;
-          home:isTechnologyOf home:HouseGLivingroom ;
           home:hasBrand "LG" ;
           home:hasColor "Black" ;
-          home:hasScreenSize 39 .
+          home:hasScreenSize 39 ;
+          home:isTechnologyOf home:HouseGLivingroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TableA
 home:TableA rdf:type owl:NamedIndividual ,
                      home:Table ;
-            home:isFurnitureOf home:HouseAKitchen ;
-            home:hasColor "Brown" .
+            home:hasColor "Brown" ;
+            home:isFurnitureOf home:HouseAKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TableB
 home:TableB rdf:type owl:NamedIndividual ,
                      home:Table ;
-            home:isFurnitureOf home:HouseBKitchen ;
-            home:hasColor "Brown" .
+            home:hasColor "Brown" ;
+            home:isFurnitureOf home:HouseBKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TableC
 home:TableC rdf:type owl:NamedIndividual ,
                      home:Table ;
-            home:isFurnitureOf home:HouseCKitchen ;
-            home:hasColor "Black" .
+            home:hasColor "Black" ;
+            home:isFurnitureOf home:HouseCKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TableD
 home:TableD rdf:type owl:NamedIndividual ,
                      home:Table ;
-            home:isFurnitureOf home:HouseDKitchen ;
-            home:hasColor "White" .
+            home:hasColor "White" ;
+            home:isFurnitureOf home:HouseDKitchen .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#ToiletA
 home:ToiletA rdf:type owl:NamedIndividual ,
                       home:Toilet ;
-             home:isFixtureOf home:HouseABathroom ;
              home:hasBrand "Delta" ;
-             home:hasColor "white" .
+             home:hasColor "white" ;
+             home:isFixtureOf home:HouseABathroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#ToiletB
 home:ToiletB rdf:type owl:NamedIndividual ,
                       home:Toilet ;
-             home:isFixtureOf home:HouseBBathroom ;
              home:hasBrand "Kohler" ;
-             home:hasColor "white" .
+             home:hasColor "white" ;
+             home:isFixtureOf home:HouseBBathroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#ToiletC
 home:ToiletC rdf:type owl:NamedIndividual ,
                       home:Toilet ;
-             home:isFixtureOf home:HouseCBathroom ;
              home:hasBrand "AmericanStandard" ;
-             home:hasColor "white" .
+             home:hasColor "white" ;
+             home:isFixtureOf home:HouseCBathroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#ToiletD1
 home:ToiletD1 rdf:type owl:NamedIndividual ,
                        home:Toilet ;
-              home:isFixtureOf home:HouseDBathroom ;
               home:hasBrand "AmericanStandard" ;
-              home:hasColor "White" .
+              home:hasColor "White" ;
+              home:isFixtureOf home:HouseDBathroom .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedA1
 home:TwinBedA1 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseAGuestRoom1 ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedA2
 home:TwinBedA2 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseAGuestRoom1 ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedA3
 home:TwinBedA3 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseAGuestRoom1 ;
-               home:hasBrand "HomeLife" .
+               home:hasBrand "HomeLife" ;
+               home:isFurnitureOf home:HouseAGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedB1
 home:TwinBedB1 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseBGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseBGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedB2
 home:TwinBedB2 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseBGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseBGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedB3
 home:TwinBedB3 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseBGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseBGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedC1
 home:TwinBedC1 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseCGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseCGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedC2
 home:TwinBedC2 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseCGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseCGuestRoom1 .
 
 
 ###  http://www.rentalsearch.com/ontologies/rentalsearch.owl#TwinBedD1
 home:TwinBedD1 rdf:type owl:NamedIndividual ,
                         home:TwinSizeBed ;
-               home:isFurnitureOf home:HouseDGuestRoom1 ;
-               home:hasBrand "Sleepys" .
+               home:hasBrand "Sleepys" ;
+               home:isFurnitureOf home:HouseDGuestRoom1 .
 
 
-###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
